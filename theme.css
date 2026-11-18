@@ -1,0 +1,588 @@
+/* =========================================================================
+   EMCC theme v8 — loaded LAST on every page.
+   Palette: navy · peach · sage · sand (white is no longer used as a surface).
+   Layout language adapted from royalcollege.lk/academics: calm editorial
+   sections, paired photographs, a short heading, a paragraph and a text link.
+   ========================================================================= */
+:root {
+  --navy: #07152e;
+  --navy2: #0e2342;
+  --navy3: #14305a;
+  --peach: #f6a682;
+  --peach-deep: #e88f6d;
+  --sage: #7a9e8e;
+  --sage-deep: #4f7566;
+  --ivory: #faf7f2;
+  --sand: #efe8dc; /* replaces white cards / panels */
+  --mist: #dfe8e2; /* sage tint for alternating sections */
+  --ink: #10213a;
+  --muted: #55627a;
+  --line: #d9d1c3;
+  --gold: var(--peach);
+  --paper: var(--sand);
+}
+
+html {
+  background: var(--navy);
+}
+body {
+  background: var(--sand);
+  color: var(--ink);
+}
+::selection {
+  background: var(--peach);
+  color: var(--navy);
+}
+:focus-visible {
+  outline: 3px solid var(--peach);
+  outline-offset: 3px;
+}
+.skip-link {
+  background: var(--peach);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* ---------- Full-bleed tonal bands (no more flat white pages) ---------- */
+.tone-sand,
+.tone-mist,
+.tone-navy {
+  position: relative;
+  clip-path: inset(0 -100vmax);
+}
+.tone-sand {
+  background: var(--sand);
+  box-shadow: 0 0 0 100vmax var(--sand);
+}
+.tone-mist {
+  background: var(--mist);
+  box-shadow: 0 0 0 100vmax var(--mist);
+}
+.tone-ivory {
+  background: var(--ivory);
+  box-shadow: 0 0 0 100vmax var(--ivory);
+  clip-path: inset(0 -100vmax);
+}
+.tone-navy {
+  background: var(--navy);
+  box-shadow: 0 0 0 100vmax var(--navy);
+  color: #e8edf5;
+}
+.tone-navy h2,
+.tone-navy h3 {
+  color: #fff;
+}
+.tone-navy .section-kicker {
+  color: var(--peach);
+}
+.tone-navy p {
+  color: #c9d3e2;
+}
+
+/* ---------- Typography ---------- */
+.section-kicker {
+  color: var(--sage-deep);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+.section-kicker.light {
+  color: var(--peach);
+}
+.page-heading h2,
+.page-section h2 {
+  color: var(--navy);
+}
+.lead {
+  color: var(--muted);
+}
+.content-note {
+  color: var(--muted);
+  border-left: 3px solid var(--peach);
+  padding-left: 16px;
+  max-width: 760px;
+}
+
+/* ---------- Cards, panels and boxes that used to be white ---------- */
+.page-card,
+.info-grid > *,
+.timeline article,
+.empty-state,
+.asset-story-card,
+.academic-feature,
+.sports-feature,
+.resource-downloads a,
+.news-card,
+.contact-card,
+.identity-card,
+.page-gallery-item,
+.gallery-item {
+  background: var(--ivory);
+  border-color: var(--line);
+}
+.page-card {
+  background: var(--ivory);
+  border-top: 3px solid var(--sage);
+}
+.empty-state {
+  background: var(--mist);
+  border: 1px solid #c5d3cb;
+  max-width: none;
+}
+.empty-state span {
+  color: var(--peach-deep);
+}
+.resource-downloads a {
+  background: var(--navy);
+  color: #fff;
+  border: 0;
+}
+.resource-downloads a span {
+  color: var(--peach);
+}
+.resource-downloads a i {
+  color: #cfd8e6;
+}
+.resource-downloads a:hover {
+  background: var(--navy3);
+}
+.gallery-item,
+.page-gallery-item {
+  background: var(--mist);
+}
+
+/* ---------- COUNTDOWN — always high-contrast, never light-on-light ---------- */
+.countdown-panel {
+  color: #fff;
+  border-top-color: #ffffff30;
+  border-bottom-color: #ffffff30;
+}
+.countdown-panel small {
+  color: var(--peach);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+.countdown-panel h3 {
+  color: #fff;
+}
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.countdown > div {
+  min-width: 0;
+  width: auto;
+  background: #0d2142;
+  border: 1px solid #2c4a78;
+  padding: 16px 6px 12px;
+  text-align: center;
+}
+.countdown b {
+  display: block;
+  color: var(--peach);
+  font: 700 clamp(30px, 4.2vw, 46px) / 1 var(--serif);
+  font-variant-numeric: tabular-nums;
+  text-shadow: none;
+}
+.countdown span {
+  display: block;
+  margin-top: 8px;
+  color: #dfe7f3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+/* AURA page: its panel is now a full navy card instead of pale grey */
+.aura-countdown,
+.countdown-panel.aura-countdown {
+  background:
+    radial-gradient(circle at 12% 0%, #1b3d70 0, transparent 55%), var(--navy);
+  color: #fff;
+  border: 0;
+  border-radius: 0;
+  margin-top: 24px;
+  padding: clamp(24px, 4vw, 44px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+}
+.aura-countdown h3 {
+  font: 600 clamp(24px, 3vw, 34px) / 1.15 var(--serif);
+  color: #fff;
+  margin: 10px 0 0;
+}
+.aura-countdown small {
+  color: var(--peach);
+}
+.aura-countdown .countdown {
+  gap: clamp(8px, 1.6vw, 18px);
+}
+.aura-countdown .countdown > div {
+  background: #0d2142;
+  border: 1px solid #2c4a78;
+  min-width: 0;
+}
+.aura-countdown .countdown b {
+  color: var(--peach);
+  font: 700 clamp(34px, 5vw, 58px) / 1 var(--serif);
+}
+.aura-countdown .countdown span {
+  color: #dfe7f3;
+  font-size: 12px;
+}
+@media (max-width: 720px) {
+  .countdown-panel,
+  .aura-countdown,
+  .countdown-panel.aura-countdown {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+  .countdown {
+    gap: 8px;
+  }
+  .countdown span,
+  .aura-countdown .countdown span {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+}
+.aura-date-card {
+  background: var(--navy2);
+}
+
+/* ---------- Mascot: transparent artwork, no white boxes ---------- */
+.aura-mascot-float,
+.aura-flyer img,
+.aura-character img {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px #02091a55);
+}
+.aura-mascot-float {
+  width: clamp(64px, 7vw, 96px);
+  bottom: 96px;
+  right: 18px;
+  z-index: 30;
+}
+.chat-launcher {
+  background: var(--peach);
+  color: var(--navy);
+  box-shadow: 0 8px 24px #02091a55;
+}
+.chat-launcher img {
+  background: var(--navy);
+  object-fit: contain;
+  padding: 2px;
+}
+.chat-panel {
+  background: var(--ivory);
+}
+.bot-message {
+  background: var(--mist);
+  color: var(--ink);
+}
+@media (max-width: 700px) {
+  .aura-mascot-float {
+    display: none;
+  }
+}
+
+/* ---------- Page banners: calm navy gradient only, always legible ---------- */
+.subhero h1,
+.subhero p {
+  text-shadow: 0 2px 18px #02091a99;
+}
+.subhero p {
+  color: #eef2f8;
+}
+
+/* =========================================================================
+   Royal College-style Academics layout
+   ========================================================================= */
+.rc-crumbs {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--sage-deep);
+  margin-bottom: 18px;
+}
+.rc-crumbs a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.rc-intro {
+  padding: clamp(56px, 8vw, 104px) 0 clamp(40px, 6vw, 72px);
+  max-width: 880px;
+}
+.rc-intro h2 {
+  font: 600 clamp(32px, 4.4vw, 52px) / 1.12 var(--serif);
+  margin: 0 0 26px;
+}
+.rc-intro p {
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.85;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+.rc-intro p:first-of-type {
+  color: var(--ink);
+}
+.rc-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 36px;
+  border-top: 2px solid var(--navy);
+}
+.rc-facts div {
+  padding: 18px 20px 6px 0;
+}
+.rc-facts b {
+  display: block;
+  font: 600 clamp(28px, 3.4vw, 40px) / 1 var(--serif);
+  color: var(--navy);
+}
+.rc-facts span {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--sage-deep);
+}
+
+.rc-block {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 6vw, 88px);
+  align-items: center;
+  padding: clamp(56px, 7vw, 96px) 0;
+}
+.rc-block.flip {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+.rc-block.flip .rc-media {
+  order: 2;
+}
+.rc-media {
+  position: relative;
+  padding: 0 0 clamp(36px, 6vw, 72px);
+}
+.rc-media img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: var(--mist);
+}
+.rc-media .rc-main {
+  aspect-ratio: 4 / 3;
+  width: 82%;
+}
+.rc-media .rc-sub {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 52%;
+  aspect-ratio: 1 / 1;
+  border: 8px solid var(--sand);
+}
+.rc-block.flip .rc-media .rc-main {
+  margin-left: auto;
+}
+.rc-block.flip .rc-media .rc-sub {
+  right: auto;
+  left: 0;
+}
+.tone-mist .rc-media .rc-sub {
+  border-color: var(--mist);
+}
+.tone-navy .rc-media .rc-sub {
+  border-color: var(--navy);
+}
+.rc-copy .section-kicker {
+  margin-bottom: 14px;
+}
+.rc-copy h2 {
+  font: 600 clamp(30px, 3.6vw, 44px) / 1.12 var(--serif);
+  margin: 0 0 20px;
+}
+.rc-copy p {
+  font-size: 16.5px;
+  line-height: 1.85;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+.rc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+  margin-top: 26px;
+}
+.rc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: 800 13px var(--display);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--peach);
+  transition:
+    gap 0.2s,
+    color 0.2s;
+}
+.rc-link:hover {
+  gap: 16px;
+  color: var(--peach-deep);
+}
+.tone-navy .rc-link {
+  color: #fff;
+}
+.tone-navy .rc-copy p {
+  color: #c9d3e2;
+}
+.rc-stagebar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 8px 0 clamp(40px, 6vw, 72px);
+}
+.rc-stagebar a {
+  display: block;
+  background: var(--ivory);
+  border-top: 3px solid var(--sage);
+  padding: 20px 22px;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.rc-stagebar a:hover {
+  background: var(--navy);
+  transform: translateY(-3px);
+}
+.rc-stagebar a:hover b,
+.rc-stagebar a:hover span,
+.rc-stagebar a:hover small {
+  color: #fff;
+}
+.rc-stagebar small {
+  color: var(--sage-deep);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  font-size: 11px;
+}
+.rc-stagebar b {
+  display: block;
+  font: 600 22px var(--serif);
+  color: var(--navy);
+  margin: 8px 0 4px;
+}
+.rc-stagebar span {
+  font-size: 14px;
+  color: var(--muted);
+}
+.rc-docs {
+  display: grid;
+  gap: 12px;
+  margin-top: 6px;
+}
+.rc-docs a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: var(--ivory);
+  border-left: 4px solid var(--peach);
+  padding: 16px 20px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.rc-docs a small {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--sage-deep);
+}
+.rc-docs a:hover {
+  background: var(--navy);
+  color: #fff;
+}
+.rc-docs a:hover small {
+  color: var(--peach);
+}
+@media (max-width: 860px) {
+  .rc-block,
+  .rc-block.flip {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .rc-block.flip .rc-media {
+    order: 0;
+  }
+  .rc-stagebar,
+  .rc-facts {
+    grid-template-columns: 1fr;
+  }
+  .rc-media .rc-main {
+    width: 86%;
+  }
+  .rc-media .rc-sub {
+    width: 46%;
+  }
+}
+
+/* ---------- Page CTA band ---------- */
+.page-cta {
+  background: var(--navy);
+}
+.page-cta p {
+  color: var(--peach);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--navy);
+}
+
+/* ---------- Motion safety ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Small helpers */
+.rc-note {
+  font-size: 13px !important;
+  color: var(--muted);
+  margin-top: 10px !important;
+}
+.gallery-note,
+.footer-note {
+  color: var(--muted);
+}
+
+/* keep "Back to top" clear of the floating chat button */
+.footer-bottom {
+  padding-bottom: 88px;
+}
+
+/* homepage AURA section: link was outside the content column and low-contrast */
+.aura .home-page-link {
+  width: min(1160px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 8px 0 56px;
+}
+.aura .home-page-link a {
+  color: var(--peach);
+  font-weight: 700;
+}
