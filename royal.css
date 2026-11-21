@@ -1,0 +1,99 @@
+/* =========================================================================
+   EMCC royal.css v9 — loaded LAST. Royal College–style layout language:
+   full-bleed cover hero, calm intro, news cards, alternating feature rows,
+   portrait hero banners on phones, and a mascot that flies on every screen.
+   ========================================================================= */
+.site-header{background:#07152ee6;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.topline{background:#050f22}
+
+/* ---------- Cover hero (homepage) ---------- */
+.rc-hero{min-height:calc(100svh - 118px);min-height:calc(100vh - 118px);justify-content:center;text-align:center}
+.rc-hero .hero-image{background-position:center 45%;animation:none}
+.rc-hero .hero-shade{background:radial-gradient(ellipse at 50% 55%,#07152ecc 0%,#07152e88 55%,#07152e55 100%),linear-gradient(180deg,#07152e66 0%,#07152ee6 100%)!important}
+.rc-hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:60px 0 90px;max-width:860px}
+.rc-hero .hero-crest{margin:0 0 18px;width:84px;height:84px}
+.rc-welcome{font:700 12px var(--display);letter-spacing:.32em;text-transform:uppercase;color:var(--peach);margin:0 0 14px}
+.rc-hero h1{font:600 clamp(38px,6.6vw,84px)/1.06 var(--serif);letter-spacing:-.02em;margin:0;color:#fff}
+.rc-motto{font:italic 500 clamp(17px,2vw,24px) var(--serif);color:#f3e3d8;margin:18px 0 30px}
+.rc-hero .hero-actions{justify-content:center}
+.rc-hero .hero-scroll{left:50%;right:auto;transform:translateX(-50%);bottom:22px;color:#fff;font-size:10px}
+.rc-hero .btn-ghost{border-color:#ffffffaa;color:#fff}
+
+/* ---------- Intro + facts ---------- */
+.rc-intro-home{text-align:center;max-width:820px;margin:0 auto;padding:clamp(56px,8vw,104px) 0 clamp(28px,4vw,48px)}
+.rc-intro-home h2{font:600 clamp(30px,4.4vw,54px)/1.12 var(--serif);color:var(--navy);margin:0 0 22px}
+.rc-intro-home p{font-size:clamp(16px,1.5vw,18px);line-height:1.85;color:var(--muted);margin:0 0 14px}
+.rc-intro-home .rc-link{margin-top:14px}
+.rc-factband{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--navy);margin:0 auto clamp(40px,6vw,80px);max-width:1160px}
+.rc-factband div{padding:20px 12px 8px;text-align:center}
+.rc-factband b{display:block;font:600 clamp(30px,4vw,48px)/1 var(--serif);color:var(--navy)}
+.rc-factband span{display:block;margin-top:8px;font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--sage-deep);text-transform:uppercase}
+
+/* ---------- Section head ---------- */
+.rc-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:34px;flex-wrap:wrap}
+.rc-head h2{font:600 clamp(30px,4vw,48px)/1.1 var(--serif);color:var(--navy);margin:6px 0 0}
+.rc-head p{color:var(--muted);margin:8px 0 0;max-width:520px;line-height:1.7}
+.rc-section{padding:clamp(56px,7vw,96px) 0}
+
+/* ---------- News cards ---------- */
+.rc-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.rc-card{display:flex;flex-direction:column;background:var(--ivory);border-bottom:3px solid var(--peach);transition:transform .25s,box-shadow .25s}
+.rc-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px #07152e22}
+.rc-card img{width:100%;aspect-ratio:16/10;object-fit:cover;background:var(--mist)}
+.rc-card .rc-card-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.rc-card small{font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--sage-deep)}
+.rc-card h3{font:600 22px/1.25 var(--serif);color:var(--navy);margin:0}
+.rc-card p{font-size:15px;line-height:1.7;color:var(--muted);margin:0}
+.rc-card .rc-link{margin-top:auto;align-self:flex-start}
+.rc-card img.contain{object-fit:contain;background:var(--navy);padding:18px}
+
+/* ---------- Upcoming event ---------- */
+.rc-event{display:grid;grid-template-columns:140px 1fr auto;gap:28px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
+.rc-event-date{background:var(--navy);color:#fff;text-align:center;padding:18px 8px}
+.rc-event-date b{display:block;font:700 34px/1 var(--serif);color:var(--peach)}
+.rc-event-date span{font-size:11px;font-weight:700;letter-spacing:.16em}
+.rc-event h3{font:600 24px var(--serif);color:var(--navy);margin:0 0 6px}
+.rc-event p{margin:0;color:var(--muted)}
+
+/* ---------- Feature rows reuse .rc-block from theme.css ---------- */
+.rc-feature .rc-media .rc-main{aspect-ratio:4/3}
+
+/* ---------- Inner-page hero banners (desktop + portrait phone art) ---------- */
+.subhero:before{background:linear-gradient(0deg,#07152ed9 0%,#07152e55 45%,#07152e14 100%),var(--subhero-image) center/cover no-repeat!important}
+.subhero-inner{padding-top:clamp(120px,16vw,220px)}
+@media(max-width:760px){
+  .subhero{min-height:min(128vw,720px)}
+  .subhero:before{background:linear-gradient(0deg,#07152ee6 0%,#07152e66 38%,transparent 62%),var(--subhero-mobile-image,var(--subhero-image)) top center/cover no-repeat!important}
+  .subhero h1{font-size:clamp(2rem,9vw,3rem)}
+  .subhero p{font-size:.95rem}
+  .rc-hero{min-height:calc(100svh - 104px)}
+  .rc-hero .hero-image{background-position:58% center}
+  .rc-cards{grid-template-columns:1fr}
+  .rc-event{grid-template-columns:84px 1fr;gap:16px}
+  .rc-event>a{grid-column:1/-1}
+  .rc-head{display:block}
+  .rc-factband b{font-size:28px}.rc-factband span{font-size:10px;letter-spacing:.08em}
+}
+@media(min-width:761px) and (max-width:1000px){.rc-cards{grid-template-columns:1fr 1fr}.rc-cards .rc-card:last-child{grid-column:1/-1}}
+
+/* ---------- MASCOT: flies on every screen size, incl. phones ---------- */
+.aura-mascot-float{display:block!important;position:fixed;right:clamp(8px,2vw,28px);bottom:clamp(84px,11vh,120px);width:clamp(74px,19vw,112px);height:auto;z-index:60;pointer-events:none;opacity:1;will-change:translate;transition:translate .35s ease-out,opacity .2s}
+body.nav-open .aura-mascot-float{opacity:0}
+@media(max-width:700px){
+  .aura-mascot-float{display:block!important;width:clamp(70px,22vw,96px);right:8px;bottom:80px}
+  .aura-flyer{width:84px;height:84px}
+}
+@media(prefers-reduced-motion:reduce){.aura-mascot-float{translate:none!important}}
+
+.rc-hero .hero-crest{display:none}
+.rc-hero h1{text-shadow:0 3px 24px #02091acc}
+
+/* ---------- Banners carry their own artwork: show them clean, title sits below ---------- */
+.subhero{display:block!important;min-height:0!important;background:var(--navy)}
+.subhero:before{content:"";display:block;position:relative!important;inset:auto!important;height:clamp(260px,41.6vw,600px);background:var(--subhero-image) center/cover no-repeat!important;z-index:0}
+.subhero-inner{padding:34px 0 48px!important;position:relative;z-index:1}
+.subhero h1{margin:14px 0}
+@media(max-width:760px){
+  .subhero:before{height:min(128vw,680px);background:var(--subhero-mobile-image,var(--subhero-image)) top center/cover no-repeat!important}
+  .subhero-inner{padding:26px 0 38px!important}
+}

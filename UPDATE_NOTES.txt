@@ -1,0 +1,76 @@
+EMCC WEBSITE UPDATE NOTES
+=========================
+
+Source package: EMCC_Official_Website_Upgraded_v3(1).zip
+
+Changes made:
+- Rechecked all supplied image files and updated website image paths to match the actual folder structure.
+- Corrected mascot references to assets/Mascot/.
+- Corrected the school gateway reference to assets/Gallery/.
+- Updated Academic page to use the supplied Academic desktop banner and Responsible Academic portrait banner.
+- Updated the Our School page to use the supplied Our school desktop and Responsible Our school portrait banners.
+- Kept the existing supplied desktop/mobile banner pairs for Sports, School Life, Achievements, Gallery, News and AURA.
+- Updated Academic stage images to use the supplied Academic and Gallery photographs.
+- Updated Achievements and Sports image references to their supplied folders.
+- Rebuilt the Gallery page grid using the 43 actual images in assets/Gallery and its subfolders. No missing placeholder image names are used.
+- Added a responsive Academic editorial layout inspired by the section hierarchy and editorial presentation of Royal College's Academics page. EMCC branding and copy remain EMCC-specific.
+- Added mobile hero styling so portrait banners are used below 700px.
+- Checked local image and CSS background references; no missing local image references remain.
+
+Before publishing:
+- Replace the generic Facebook, Instagram, YouTube and X links with EMCC's official social URLs.
+- Confirm any school-specific admissions, grade, subject, stream and examination details before adding them to public copy.
+
+
+Version 6 visual update (18 November 2026)
+- Updated visual palette to navy #07152E, peach #F6A682, ivory #FAF7F2 and sage #7A9E8E.
+- Reworked navigation into a full-screen navy menu with EMCC crest and responsive link layout.
+- Removed white banner glow/shadow treatments and replaced banner overlays with restrained navy gradients for legibility.
+- Added responsive editorial spacing and image treatment inspired by the supplied reference recording.
+
+Version 8 (18 November 2026)
+- New theme.css (loaded last): navy/peach/sage/sand palette, white backgrounds removed, readable AURA countdown.
+- Academics rebuilt in the Royal College academics style (intro, Faculty, Admissions, Curriculum, Resources, Recognition).
+- Homepage gallery paths fixed (44 images; archive-04/18/44 never existed).
+- Transparent Emmy artwork (no white boxes); draft wording removed; chat FAQ matching fixed.
+- Generic social links removed until official URLs are supplied.
+- privacy.html now loads pages.js; sitemap and Firebase ignore list updated.
+
+Version 9 (18 November 2026) — Royal College-style upgrade
+- New royal.css (loaded last on every page) and mascot.js (added to every page).
+- Homepage rebuilt in the royalcollege.lk structure: full-bleed cover hero with centred welcome, intro + facts,
+  "EMCC Today" news cards, upcoming event row, alternating Academics / School life / Sports / History rows.
+- Mascot (EMMY flying) now shows and glides on scroll on phones and tablets (it was hidden below 700px).
+- Inner-page banners: desktop and portrait "Responsible" banners shown clean, page title placed below the artwork.
+- Checked: all local images, links and anchors resolve; no horizontal scroll at 390px and 1366px; no JS errors.
+- Content note: the "Prefect Investiture Ceremony 2026" card uses the caption visible in the supplied photo; edit if needed.
+
+Version 10 (19 November 2026)
+- New upgrade.css (loaded last on every page).
+- Footer: Facebook, Instagram, YouTube, X icons + "Design by Axyntra Digital Solutions | axyntra.lk".
+- Vision / mission / values and all message boxes restyled as numbered colour-tab cards.
+- Our school timeline rebuilt as a circle-node infographic (vertical on phones).
+- Sports page: sport features with photos, more school sports, competition pathway, benefits.
+- Achievements page: photo + content rows with highlights.
+- Homepage: countdown moved directly under the hero banner.
+- AURA 2027 text now glows and blinks (respects reduced-motion).
+- TODO: replace social links (generic homepages) with EMCC's official URLs.
+
+Version 11
+- Nav: "News & events" -> "News", new "Contact" page (contact.html) with phones, address, postal code, Google map and social links.
+- Social links set: Facebook, Instagram, YouTube (X removed - no link supplied).
+- Peach replaced with rich gold + glow and blurred light accents.
+- Home banners: assets/Banner M/Main.webp (desktop) and assets/Banner M/Responsible Main.webp (mobile). Currently placeholders made from the gateway photo: replace with your final images using the SAME file names (case-sensitive).
+- Contact page banner: assets/Banner M/Contact.webp and Responsible Contact.webp (currently copies of the Our school banner).
+
+Version 12
+- Colour system: navy 60% / white 30% / hot pink (#ff2e9a) 10%. Gold removed. Sub-pages alternate full-width navy and white sections.
+- Social links: Facebook, Instagram (emcc.lk), Threads, X, Reddit. (YouTube removed - re-add if needed.)
+- Home banners: assets/BannerM/Main.webp and assets/BannerM/Responsible Main.webp (falls back to "Banner M" folder). Currently placeholders: replace with your final images, same names.
+- Contact map now pins the school (7.4001712, 80.0373497); "Open in Google Maps" uses your place link.
+
+Version 13
+- index.html og:image / twitter:image -> assets/BannerM/Main.webp
+- Home hero reads assets/BannerM/ first (Main.webp, Responsible Main.webp), then assets/Banner M/. No placeholder is left in BannerM, so your own files always show.
+- Threads and X icons replaced with the official logo shapes.
+- Contact map uses the Google place embed (pb) centred and zoomed on the school.
